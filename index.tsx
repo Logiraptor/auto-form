@@ -52,25 +52,21 @@ export class AutoForm extends React.Component<FormProps, { value: any }> {
 	}
 }
 
-export function AutoWired<K extends keyof ElementTagNameMap>(
+export function AutoWired<K extends keyof JSX.IntrinsicElements>(
 	type: K
-): React.ComponentType<React.HTMLProps<ElementTagNameMap[K]> & { autowired?: boolean }>;
-export function AutoWired<P>(Component: React.ComponentType<P>): React.ComponentType<P & { autowired?: boolean }> {
-	const Inner = class extends React.Component {
+): React.ComponentType<JSX.IntrinsicElements[K] & { autowire?: boolean }>;
+export function AutoWired<P>(Component: React.ComponentType<P>): React.ComponentType<P & { autowire?: boolean }>;
+export function AutoWired<P>(Component: any): React.ComponentType<P & { autowire?: boolean }> {
+	const Inner = class extends React.Component<P & { autowire?: boolean }> {
+		static defaultProps: P & {autowire?:boolean} = {
+			autowire: true,
+			...Component.defaultProps
+		}
 		render() {
 			const { autowire, ...rest } = this.props as any;
 			return <Component {...rest} />;
 		}
-	} as any;
-
-	if (Component.defaultProps) {
-		Inner.defaultProps = {
-			autowire: true,
-			...Component.defaultProps as any
-		};
-	} else {
-		Inner.defaultProps = { autowire: true };
-	}
+	};
 
 	return Inner;
 }

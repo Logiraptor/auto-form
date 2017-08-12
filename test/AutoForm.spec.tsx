@@ -140,7 +140,7 @@ describe('AutoWired', () => {
 			}
 		}
 
-		let AutoComponent = AutoWired(CustomInput as any);
+		let AutoComponent = AutoWired(CustomInput);
 		let component = mount(<AutoComponent name="Bobby" />);
 		expect(component).to.have.prop('name', 'Bobby');
 		expect(AutoComponent.defaultProps).to.deep.eq({
