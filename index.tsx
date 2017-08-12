@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { ReactHTML } from 'react';
 
 export type ComponentOrTag = keyof ElementTagNameMap | React.ComponentType;
 
