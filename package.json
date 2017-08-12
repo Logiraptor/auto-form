@@ -1,6 +1,6 @@
 {
 	"name": "auto-form-struct",
-	"version": "1.1.0",
+	"version": "1.1.1",
 	"description": "Auto form binding for ReactJS",
 	"main": "index.js",
 	"scripts": {
