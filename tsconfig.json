@@ -3,6 +3,7 @@
 		"noImplicitAny": false,
 		"strictNullChecks": false,
 		"jsx": "react",
-		"sourceMap": true
-	}
+		"declaration": true
+	},
+	"files": [ "./index.tsx" ]
 }

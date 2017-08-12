@@ -5,13 +5,15 @@
 	"main": "index.js",
 	"scripts": {
 		"test": "ts-mocha 'test/*.tsx'",
-		"coverage": "nyc yarn test"
+		"coverage": "nyc yarn test",
+		"build": "tsc -p ."
 	},
 	"nyc": {
 		"extension": [ ".ts", ".tsx" ],
 		"reporter": [ "html", "text" ],
 		"all": true
 	},
+	"types": "index.d.ts",
 	"repository": {
 		"type": "git",
 		"url": "github.com/Logiraptor/auto-form"

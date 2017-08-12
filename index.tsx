@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { ReactHTML } from 'react';
 
-type ComponentOrTag = keyof ElementTagNameMap | React.ComponentType;
+export type ComponentOrTag = keyof ElementTagNameMap | React.ComponentType;
 
 export interface FormProps {
 	element?: ComponentOrTag;
