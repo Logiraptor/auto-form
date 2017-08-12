@@ -1,5 +1,5 @@
 {
-	"name": "auto-form",
+	"name": "auto-form-struct",
 	"version": "1.0.0",
 	"description": "Auto form binding for ReactJS",
 	"main": "index.js",
